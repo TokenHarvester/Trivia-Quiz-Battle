@@ -1,8 +1,7 @@
-# 🎮💰 Trivia Quiz Battle on Solana
+# 🎮💰 Trivia Quiz Battle on Gorbagana Testnet
 
-A decentralized trivia game where players battle with knowledge to win crypto prizes! Built on Solana using Anchor framework.
+A decentralized trivia game where players battle with knowledge to win crypto prizes!
 
-![Game Screenshot](https://ipfs.io/ipfs/bafybeid2zxrnokky4wx7eba5rlhwy7kpwq74o545hb5djeyhn6s6qregju)
 
 ## 🌟 Features
 
@@ -31,3 +30,58 @@ A decentralized trivia game where players battle with knowledge to win crypto pr
    git clone https://github.com/TokenHarvester/Trivia-Quiz-Battle.git
    cd Trivia-Quiz-Battle
    # Open index.html in browser
+
+3. **How to Play**:
+   - Connect your Backpack wallet
+   - Create or join a game
+   - Deposit 1 GOR token
+   - Answer 10 trivia questions
+   - Winner claims 2 GOR prize!
+  
+## 🏗️ Project Structure
+
+    ```bash
+    trivia-quiz-battle/
+    ├── index.html        # Main game interface
+    ├── style.css         # Styling
+    ├── script.js         # Game logic
+    ├── contract.js       # Solana program interactions
+    └── README.md         # This file
+     ```
+
+## 📜 Smart Contract Details
+
+   Key program functions:
+   - createGame() - Initialize new game
+   - joinGame() - Join existing game
+   - depositTokens() - Lock player funds
+   - submitAnswer() - Process player responses
+   - claimPrize() - Distribute winnings
+
+## 🧩 Game Flow
+   - Player 1 creates game (sets entry fee)
+   - Player 2 joins with game ID
+   - Both players deposit tokens
+   - Answer 10 trivia questions
+   - Smart contract determines winner
+   - Winner claims prize pool
+
+## 📝 Sample Questions
+   The game includes 10 blockchain/Solana-themed questions like:
+
+   - "What is Solana's native token?"
+   - "Which consensus mechanism does Solana use?"
+   - "What does ICO stand for?"
+
+## 🤝 Contributing
+    Contributions welcome! Please open an issue or PR for:
+
+    - New question sets
+    - UI improvements
+    - Smart contract optimizations
+
+## ⚠️ Disclaimer
+This is a testnet demo. Use at your own risk with test tokens only.
+
+## 📄 License
+MIT

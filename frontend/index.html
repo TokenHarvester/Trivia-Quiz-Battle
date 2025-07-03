@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trivia Quiz Battle</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@solana/web3.js@1.70.1/lib/index.iife.min.js"></script>
+    <script src="https://unpkg.com/@project-serum/anchor@0.28.0/dist/anchor.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>💰 Trivia Quiz Battle (Gorbagana)</h1>
+        
+        <!-- Wallet Connection -->
+        <div id="wallet-section">
+            <button id="connect-wallet">Connect Backpack Wallet</button><br><br>
+            <p>Wallet: <span id="wallet-address">Not connected</span></p><br>
+            <p>GOR Balance: <span id="gor-balance">0</span></p>
+        </div>
+
+        <!-- Game Screens -->
+        <div id="setup-screen">
+            <h2>Game Rules:</h2>
+            <p>1. Both players deposit 1 GOR token</p>
+            <p>2. Answer 10 trivia questions</p>
+            <p>3. Winner gets 2 GOR tokens!</p>
+            <div class="button-group">
+                <button id="create-game" disabled>Create New Game</button>
+                <button id="join-game" disabled>Join Existing Game</button>
+            </div>
+        </div>
+
+        <div id="waiting-screen" class="hidden">
+            <h2>Waiting for opponent...</h2>
+            <p>Share this Game ID with Player 2:</p>
+            <p id="game-id-display" class="game-id"></p>
+            <p>Waiting for Player 2 to join and deposit...</p>
+        </div>
+
+        <div id="deposit-screen" class="hidden">
+            <h2>🔐 Deposit Required</h2>
+            <p>Both players must deposit <strong>1 GOR</strong> to start</p>
+            <div id="deposit-status">
+                <p>Player 1: <span id="player1-deposit-status">❌ Not deposited</span></p>
+                <p>Player 2: <span id="player2-deposit-status">❌ Not deposited</span></p>
+            </div>
+            <button id="deposit-button" class="action-button">Deposit 1 GORB</button>
+            <p id="deposit-message" class="status-text"></p>
+            <p id="balance-warning" class="warning-text"></p>
+        </div>
+
+        <div id="game-screen" class="hidden">
+            <h2 id="question-number">Question 1/10</h2>
+            <div id="question">Loading question...</div>
+            <div id="options"></div>
+        </div>
+
+        <div id="result-screen" class="hidden">
+            <h2 id="result-title">Game Over!</h2>
+            <p id="result-message"></p>
+            <button id="claim-prize">Claim Prize</button>
+        </div>
+    </div>
+
+    <script src="contract.js"></script>
+</body>
+</html>
